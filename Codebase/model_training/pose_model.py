@@ -1,0 +1,1 @@
+# For creating and training the pose estimation model on data images.
