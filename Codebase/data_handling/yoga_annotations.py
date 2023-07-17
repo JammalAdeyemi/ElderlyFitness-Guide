@@ -12,11 +12,10 @@ pose = mp_pose.Pose(static_image_mode=True, min_detection_confidence=0.5, model_
 folder_path = "../../Data_dissertation/Yoga_Datasets"
 folders = [os.path.join(folder_path, f) for f in ['Anjaneyasana', 'Baddha_Konasana', 'Marjaryasana', 'Savasana',
                                                   'Supta_matsyendrasana', 'tadasana', 'urdhva_hastasana', 'Vrksasana']]
-# folders = [os.path.join(folder_path, f) for f in ['Anjaneyasana', 'Baddha_Konasana', 'Marjaryasana', 'Savasana']]
-# folders = [os.path.join(folder_path, f) for f in ['Supta_matsyendrasana', 'tadasana', 'urdhva_hastasana', 'Vrksasana']]
 
+# Get the list of all the pose landmarks
 keypoints = [l.name for l in mp_pose.PoseLandmark]
-
+# Create empty lists to store the pose landmarks and the pose nameß
 landmarks = []
 poses = []
 
@@ -43,6 +42,7 @@ for folder in folders:
 
 # Create separate columns for each coordinate of each pose landmark
 column_names = ["pose_name"]
+# Iterate over each pose landmark
 for kp in keypoints:
   for coord in ['x', 'y', 'z']:
     column_names.append(f"{coord}_{kp}")

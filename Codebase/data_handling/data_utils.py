@@ -11,20 +11,8 @@ def load_images(folder):
       image_paths.append(image_path)
   return image_paths
 
-def get_video_paths(exercise_dir):
-    """
-    Function to get paths of all exercise videos per exercise sub-directory.
-    Argument: 
-        exercise_dir : directory where exercise directories are stored
-    """
-    exercise_video_paths = {}
-    
-    # Iterate through each exercise directory
-    for exercise in os.listdir(exercise_dir):
-        exercise_subdir = os.path.join(exercise_dir, exercise)
-        exercise_videos = os.listdir(exercise_subdir)
-        exercise_videos = [os.path.join(exercise_subdir, video) for video in exercise_videos]
-        
-        # Store in dictionary with exercise name as key
-        exercise_video_paths[exercise] = exercise_videos
-    return exercise_video_paths
+# Get video paths for a folder
+def get_video_paths(folder):
+  # List all MP4 videos in the folder
+  videos = [os.path.join(folder, f) for f in os.listdir(folder) if f.endswith('.mp4')]
+  return videos
