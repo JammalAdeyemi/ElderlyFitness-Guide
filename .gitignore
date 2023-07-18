@@ -1,3 +1,17 @@
 Data_dissertation/
 Tutorial_Notebook/
+
+# macOS specific files
+.DS_Store
+
+# Virtual environments
+.env
+.env.sh
 venv/
+ENV/
+
+# IDE-specific files
+.vscode/
+.idea/
+
+__pycache__/
