@@ -10,10 +10,8 @@ mp_pose = mp.solutions.pose
 pose = mp_pose.Pose(static_image_mode=True, min_detection_confidence=0.5, model_complexity=2)
 
 folder_path = "../../Data_dissertation/Exercise"
-# folders = [os.path.join(folder_path, f) for f in ['arm_raise', 'bicycle_crunch', 'bird_dog', 'curl', 'fly', 'leg_raise', 
-#                                                   'pushup', 'squat', 'overhead_press', 'superman']]
-
-folders = [os.path.join(folder_path, f) for f in ['pushup', 'squat']]
+folders = [os.path.join(folder_path, f) for f in ['arm_raise', 'bicycle_crunch', 'bird_dog', 'curl', 'fly', 'leg_raise', 
+                                                  'pushup', 'squat', 'overhead_press', 'superman']]
 
 # Get the list of all the pose landmarks
 keypoints = [l.name for l in mp_pose.PoseLandmark]
