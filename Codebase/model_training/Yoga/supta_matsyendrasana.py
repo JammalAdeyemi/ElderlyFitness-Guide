@@ -1,1 +1,0 @@
-# Supine Spinal Twist Pose

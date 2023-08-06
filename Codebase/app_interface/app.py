@@ -1,1 +1,0 @@
-# The main application file that binds everything together and interacts with the user.

@@ -1,1 +1,0 @@
-# Low Lunge pose
