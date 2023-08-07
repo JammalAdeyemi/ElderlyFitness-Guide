@@ -18,12 +18,12 @@ export default function Home() {
                     <Link to='/start'>
                         <button
                             className="btn start-btn"
-                        >Let's Start</button>
+                        >Yoga</button>
                     </Link>
                     <Link to='/tutorials'>
                         <button
                             className="btn start-btn"
-                        >Tutorials</button>
+                        >Exercise</button>
                     </Link>
 
                 </div>

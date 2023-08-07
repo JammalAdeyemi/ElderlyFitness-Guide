@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 
 import Home from './pages/Home/Home'
 import Yoga from './pages/Yoga/Yoga'
-import Tutorials from './pages/Tutorials/Tutorials'
+import Tutorials from './pages/Yoga/Tutorials'
 
 import './App.css'
 

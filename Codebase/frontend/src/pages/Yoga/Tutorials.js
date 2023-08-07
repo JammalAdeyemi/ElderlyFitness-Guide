@@ -7,7 +7,7 @@ import { count } from '../../utils/music';
  
 import Instructions from '../../components/Instrctions/Instructions';
 
-import './Yoga.css'
+import './Tutorials.css'
  
 import DropDown from '../../components/DropDown/DropDown';
 import { poseImages } from '../../utils/pose_images';
@@ -17,9 +17,7 @@ import { drawPoint, drawSegment } from '../../utils/helper'
 
 
 let skeletonColor = 'rgb(255,255,255)'
-let poseList = [ 
-  'Tree', 'Chair', 'Cobra', 'Warrior', 'Dog',
-  'Shoulderstand', 'Traingle'
+let poseList = [ 'BentOverRow', 'ChairSquat', 'PushUps', 'Sit_to_Stand', 'Setups'
 ]
 
 let interval
@@ -38,7 +36,7 @@ function Yoga() {
   const [currentTime, setCurrentTime] = useState(0)
   const [poseTime, setPoseTime] = useState(0)
   const [bestPerform, setBestPerform] = useState(0)
-  const [currentPose, setCurrentPose] = useState('Tree')
+  const [currentPose, setCurrentPose] = useState('BentOverRow')
   const [isStartPose, setIsStartPose] = useState(false)
 
   

@@ -1,11 +1,11 @@
 import csv
 import pandas as pd
-from tensorflow import keras
-from sklearn.model_selection import train_test_split
-from data import BodyPart 
+from data import BodyPart
+import matplotlib.pyplot as plt
 import tensorflow as tf
 import tensorflowjs as tfjs
-
+from tensorflow import keras
+from sklearn.model_selection import train_test_split
 
 # If you are on a Mac with an M1 chip, import the tensorflow-metal plugin
 try:
@@ -118,9 +118,9 @@ def preprocess_data(X_train):
     return tf.convert_to_tensor(processed_X_train)
 
 
-X, y, class_names = load_csv('train_data.csv')
+X, y, class_names = load_csv('../../Data/model_data/train_data.csv')
 X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.15)
-X_test, y_test, _ = load_csv('test_data.csv')
+X_test, y_test, _ = load_csv('../../Data/model_data/test_data.csv')
 
 
 processed_X_train = preprocess_data(X_train)
@@ -168,6 +168,47 @@ loss, accuracy = model.evaluate(processed_X_test, y_test)
 print('LOSS: ', loss)
 print("ACCURACY: ", accuracy)
 
+# Get the accuracy and validation accuracy from the history object
+acc = history.history['accuracy']
+val_acc = history.history['val_accuracy']
 
-tfjs.converters.save_keras_model(model, tfjs_model_dir)
-print('tfjs model saved at ',tfjs_model_dir)
+# Get the loss and validation loss from the history object
+loss = history.history['loss']
+val_loss = history.history['val_loss']
+
+# Save the loss, accuracy, and validation accuracy as a CSV file
+data = {
+    'Accuracy': acc,
+    'Val Accuracy': val_acc,
+    'Loss': loss,
+    'Val Loss': val_loss
+}
+
+df = pd.DataFrame(data)
+df.to_csv('model_performance.csv', index=False)
+
+# Plot the accuracy
+plt.figure(figsize=(8, 4))
+plt.plot(range(len(acc)), acc, label='Train Accuracy')
+plt.plot(range(len(val_acc)), val_acc, label='Validation Accuracy')
+plt.title('Training and Validation Accuracy')
+plt.xlabel('Epochs')
+plt.ylabel('Accuracy')
+plt.legend()
+plt.savefig('accuracy_plot.jpg')
+plt.show()
+
+# Plot the loss
+plt.figure(figsize=(8, 4))
+plt.plot(range(len(loss)), loss, label='Train Loss')
+plt.plot(range(len(val_loss)), val_loss, label='Validation Loss')
+plt.title('Training and Validation Loss')
+plt.xlabel('Epochs')
+plt.ylabel('Loss')
+plt.legend()
+plt.savefig('loss_plot.jpg')
+plt.show()
+
+
+# tfjs.converters.save_keras_model(model, tfjs_model_dir)
+# print('tfjs model saved at ',tfjs_model_dir)
