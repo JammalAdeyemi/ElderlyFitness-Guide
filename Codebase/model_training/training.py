@@ -143,8 +143,7 @@ model.compile(
     metrics=['accuracy']
 )
 
-# Add a checkpoint callback to store the checkpoint that has the highest
-# validation accuracy.
+# Add a checkpoint callback to store the checkpoint that has the highest validation accuracy.
 checkpoint_path = "mobilenet_1_0_224_tf.h5"
 checkpoint = keras.callbacks.ModelCheckpoint(checkpoint_path,
                              monitor='val_accuracy',
@@ -183,7 +182,6 @@ data = {
     'Loss': loss,
     'Val Loss': val_loss
 }
-
 df = pd.DataFrame(data)
 df.to_csv('model_performance.csv', index=False)
 
@@ -209,6 +207,6 @@ plt.legend()
 plt.savefig('loss_plot.jpg')
 plt.show()
 
-
-# tfjs.converters.save_keras_model(model, tfjs_model_dir)
-# print('tfjs model saved at ',tfjs_model_dir)
+# Save the model as a SavedModel
+tfjs.converters.save_keras_model(model, tfjs_model_dir)
+print('tfjs model saved at ',tfjs_model_dir)
