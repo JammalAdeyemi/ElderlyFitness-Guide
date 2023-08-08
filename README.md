@@ -9,7 +9,6 @@ This project implements a real-time human pose estimation pipeline using the Mov
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation) 
-- [Usage](#usage)
 - [Methodology](#methodology)
   - [Data](#data)
   - [Preprocessing](#preprocessing)
@@ -51,36 +50,17 @@ Python 3.8 or higher with pip installed.
  
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username/pose-estimation.git
+   git clone https://github.com/JammalAdeyemi/Exercise-Pose-Detection.git
    ```
 3. Install Python packages
    ```sh
    pip install -r requirements.txt
    ```
 
-## Usage
-
-```python
-import preprocessing
-
-# Generate pose CSVs 
-processor = Preprocessor('images/', 'outputs/')  
-processor.process()
-
-# Classify poses
-from training import train_model, evaluate
-
-train_df = pd.read_csv('train.csv')
-X_train, y_train = preprocess(train_df)
-
-model = train_model(X_train, y_train)
-evaluate(model, X_test, y_test) 
-```
-
 ## Methodology
 
 ### Data
-- 1000 yoga pose images across 8 classes
+- 1000 yoga pose images across 6 classes
 - Exercise videos & Images - 6 classes 
 
 ### Preprocessing
