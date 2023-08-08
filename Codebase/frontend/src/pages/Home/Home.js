@@ -12,7 +12,7 @@ export default function Home() {
               
             </div>
 
-            <h1 className="description">A Yoga AI Trainer</h1>
+            <h1 className="description">Tiago's Fitness Buddy</h1>
             <div className="home-main">
                 <div className="btn-section">
                     <Link to='/start'>

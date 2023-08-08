@@ -156,7 +156,7 @@ earlystopping = keras.callbacks.EarlyStopping(monitor='val_accuracy',
 # Start training
 print('--------------TRAINING----------------')
 history = model.fit(processed_X_train, y_train,
-                    epochs=200,
+                    epochs=150,
                     batch_size=16,
                     validation_data=(processed_X_val, y_val),
                     callbacks=[checkpoint, earlystopping])
