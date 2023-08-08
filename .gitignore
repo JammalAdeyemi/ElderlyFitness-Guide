@@ -1,11 +1,9 @@
 Data_dissertation/
 Tutorial_Notebook/
 testing/
-Data/
+yoga_poses/
 classification model/
-Data/
 node_modules/
-frontend_1/
 
 # macOS specific files
 .DS_Store
