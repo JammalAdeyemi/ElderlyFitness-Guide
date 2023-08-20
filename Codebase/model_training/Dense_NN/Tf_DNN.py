@@ -117,7 +117,7 @@ def preprocess_data(X_train):
         processed_X_train.append(tf.reshape(embedding, (34)))
     return tf.convert_to_tensor(processed_X_train)
 
-
+# Split the data into train, validation and test sets
 X, y, class_names = load_csv('../../../Data/model_data/train_data.csv')
 X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.15)
 X_test, y_test, _ = load_csv('../../../Data/model_data/test_data.csv')
