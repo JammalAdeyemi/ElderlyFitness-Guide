@@ -3,7 +3,8 @@ Tutorial_Notebook/
 testing/
 yoga_poses/
 classification model/
-node_modules/
+frontend/
+
 
 # macOS specific files
 .DS_Store
