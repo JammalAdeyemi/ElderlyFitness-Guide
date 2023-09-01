@@ -1,6 +1,7 @@
-# Human Pose Estimation with MoveNet
+# FitnessPal for Tiago: An Elderly Exercise and Yoga Buddy
 
-This project implements a real-time human pose estimation pipeline using the MoveNet model from TensorFlow. It detects poses in images and videos, outputs keypoint locations, and classifies yoga poses.
+## Overview
+FitnessPal for Tiago is an innovative project aimed at providing tailored exercise and yoga support for elderly individuals, leveraging state-of-the-art pose estimation technology. Our system encourages physical well-being, enhances engagement and adherence to exercise and yoga routines, and improves form and balance.
 
 ## Contents
 
@@ -9,6 +10,7 @@ This project implements a real-time human pose estimation pipeline using the Mov
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation) 
+- [How It Works](#how-it-works)
 - [Methodology](#methodology)
   - [Data](#data)
   - [Preprocessing](#preprocessing)
@@ -16,7 +18,8 @@ This project implements a real-time human pose estimation pipeline using the Mov
   - [Pipeline](#pipeline)
   - [Evaluation](#evaluation)
   - [Deployment](#deployment)
-- [Results](#results)
+- [Key Features](#key-features)
+- [Future Work](#future-work)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -27,18 +30,19 @@ This project implements a real-time human pose estimation pipeline using the Mov
 This project implements a pose estimation pipeline using MoveNet, a lightweight model from TensorFlow, for real-time detection and classification of yoga poses and exercises. The goals of this project were to:
 
 - Accurately detect 2D pose keypoints in images and videos 
-- Classify common yoga poses like tree, warrior, etc.
-- Optimize model for real-time inference on edge devices
-- Build an end-to-end pipeline from data to deployment
+- Classify yoga and exercise pose that are easy for the elders.
+- Build a model that can accurately classify yoga and exercises poses.
+- Build a web-app using react, tensorflow.js, opencv.js and integrate the developed model to the web-app.
+- Perform user testing to evaluate the sytem's performance
 
 ### Built With
 
 - [TensorFlow](https://www.tensorflow.org/)
 - [MoveNet](https://www.tensorflow.org/lite/models/pose_estimation/overview)
 - [TensorFlow Lite](https://www.tensorflow.org/lite) 
-- [Python]
-- [OpenCV]
-- [React]
+- Python
+- OpenCV
+- React
 
 ## Getting Started
 
@@ -57,11 +61,18 @@ Python 3.8 or higher with pip installed.
    pip install -r requirements.txt
    ```
 
+## How It Works
+1. Pose Detection: We gather exercise and yoga data from various sources and apply Movenet for keypoint extraction.
+2. Data Preprocessing: We preprocess the extracted keypoints to create a robust pose detection model.
+3. Deep Learning Models: We build and evaluate different pose classification models (CNN, DNN, MLP) to choose the best performer.
+4. Web Application: The selected model is integrated into our user-friendly web app, offering real-time feedback.
+5. Deployment: Our system is deployed on the Tiago robot for real-time assistance to elderly users.
+
 ## Methodology
 
 ### Data
-- 1000 yoga pose images across 6 classes
-- Exercise videos & Images - 6 classes 
+- 1000 yoga pose images across 6 classes from [Kaggle](https://www.kaggle.com/datasets/tr1gg3rtrash/yoga-posture-dataset?select=Adho+Mukha+Svanasana)
+- Exercise videos & Images - 6 classes from youtube videos and google images
 
 ### Preprocessing
 - Load and merge CSVs
@@ -70,30 +81,37 @@ Python 3.8 or higher with pip installed.
 
 ### Model
 - MoveNet Thunder pretrained model
-- Optimized for edge devices
-- Input: Image/Video, Output: 17 Body Keypoints 
+- CNN
+- DNN
+- MLP
 
 ### Pipeline
 - Load data
 - Detect poses with MoveNet 
-- Postprocess keypoints
+- Preprocess keypoints
 - Construct dataset
 - Train classifier 
 
 ### Evaluation
-- Accuracy: 97% on pose classification
+- Accuracy: 98% on pose classification
 
 ### Deployment
 - Exported to TensorFlow Lite
 - Integrated into React Web App
+- Deployed the web app on Tiago robot
 
-## Results (In Progress)
+## Key Features
+- Pose Detection: Utilizing advanced pose estimation models, we offer real-time feedback and posture correction.
+- Repetition Counting: Our system reliably tracks exercise and yoga repetitions, ensuring effectiveness.
+- User-Friendly Interface: The application is designed for easy interaction, making it accessible to elderly users.
+- Deployment on Tiago: FitnessPal is integrated into the Tiago robot, allowing real-time interaction and assistance.
 
-- Achieved X% accuracy in classifying Y yoga poses
-- Inference time of Z ms per image using MoveNet on a laptop
+## Future Work
+- Personalized Routines: Implementing personalized exercise routines based on user profiles.
+- Enhanced Interactivity: Adding voice commands and conversational AI for more natural interaction.
+- Continuous Improvement: Regular updates and enhancements to improve user satisfaction.
 
 ## Contributing
-
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
