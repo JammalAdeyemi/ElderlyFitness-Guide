@@ -1,9 +1,14 @@
 Data_dissertation/
+Codebase/
 Tutorial_Notebook/
 testing/
 yoga_poses/
 classification model/
 frontend/
+node_modules/
+package-lock.json
+package.json
+corsconfig.json
 
 
 # macOS specific files
@@ -20,3 +25,4 @@ ENV/
 .idea/
 
 __pycache__/
+
